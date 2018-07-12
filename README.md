@@ -2,6 +2,21 @@
 
 Using this for various of my personal projects. Feel free to fork or contribute.
 
+To build and push:
+
+1. Build the container image - `docker build .`
+
+2. Copy the tag hash - Ex. `0d190e377fd8`
+
+3. Test your changes - `docker run -it 0d190e377fd8 /bin/bash`
+
+4. Tag your changes - `docker tag 0d190e377fd8 ogprogrammer/amazonlinux-php-nginx:latest`
+
+5. Push your tagged images - `docker push ogprogrammer/amazonlinux-php-nginx`
+
+Don't forgot to login to docker.io in the CLI first ;)
+
+
 ```
 Built & Maintained by @OGProgrammer
 
