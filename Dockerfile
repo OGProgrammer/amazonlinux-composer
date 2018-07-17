@@ -9,6 +9,7 @@ RUN yum update -y
 
 # Install System Packages
 RUN amazon-linux-extras install -y php7.2 memcached1.5 vim nginx1.12
+RUN yum -y install php-mbstring php-zip unzip
 
 # Clean up YUM when completed
 RUN yum clean all
