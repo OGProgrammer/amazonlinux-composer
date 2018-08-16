@@ -7,9 +7,14 @@ MAINTAINER OGProgrammer <JoshuaRCopeland@gmail.com>
 # Update Package Sources
 RUN yum update -y
 
+# NPM
+RUN curl --silent --location https://rpm.nodesource.com/setup_8.x | bash -
+
 # Install System Packages
 RUN amazon-linux-extras install -y php7.2 memcached1.5 vim nginx1.12
-RUN yum -y install php-mbstring php-zip unzip
+
+# Build & PHP Packages
+RUN yum -y install php-mbstring php-zip unzip nodejs
 
 # Clean up YUM when completed
 RUN yum clean all

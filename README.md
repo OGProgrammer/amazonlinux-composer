@@ -1,4 +1,4 @@
-# Amazon Linux 2 with PHP Composer & NGINX
+# Amazon Linux 2 with PHP Composer & NGINX & NPM
 
 Using this for various of my personal projects. Feel free to fork or contribute.
 
