@@ -11,10 +11,14 @@ RUN yum update -y
 RUN curl --silent --location https://rpm.nodesource.com/setup_8.x | bash -
 
 # Install System Packages
-RUN amazon-linux-extras install -y php7.2 memcached1.5 vim nginx1.12
+RUN amazon-linux-extras install -y php7.2 vim
 
-# Build & PHP Packages
-RUN yum -y install php-mbstring php-zip unzip nodejs
+# Build & PHP Packages @todo may not need pngquant stuff here
+RUN yum -y install php-mbstring php-zip unzip nodejs libpng-devel libpng git gcc make
+
+#Install pngquant
+RUN cd /tmp && git clone --recursive https://github.com/kornelski/pngquant.git && \
+    cd /tmp/pngquant && make && make install && rm -rf /tmp/pngquant
 
 # Clean up YUM when completed
 RUN yum clean all
