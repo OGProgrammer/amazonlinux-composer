@@ -1,0 +1,7 @@
+version: '2'
+services:
+    codebuild:
+        build: ./
+        volumes:
+            - ../path-to-code/:/var/www/
+        command: tail -F /var/log/dmesg

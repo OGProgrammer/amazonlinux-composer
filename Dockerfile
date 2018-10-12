@@ -14,7 +14,19 @@ RUN curl --silent --location https://rpm.nodesource.com/setup_8.x | bash -
 RUN amazon-linux-extras install -y php7.2 memcached1.5 vim nginx1.12
 
 # Build & PHP Packages
-RUN yum -y install php-mbstring php-zip unzip nodejs php-xml
+RUN yum -y install nodejs \
+        libpng12-devel \
+        php-devel \
+        gcc \
+        make \
+        git \
+        unzip \
+        php-pear \
+        php-mbstring \
+        php-zip \
+        php-xml \
+        php-gd \
+        php-pear
 
 # Clean up YUM when completed
 RUN yum clean all
